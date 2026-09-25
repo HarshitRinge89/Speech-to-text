@@ -1,14 +1,22 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
+import Sidebar from './Sidebar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isOpen, setIsOpen] = useState(true);
+  const toggleSidebar=()=>{
+    setIsOpen(!isOpen)
+  }
 
   return (
-    <> Work in Progress
+    <>
+    <header>
+      <img src="https://files.softicons.com/download/toolbar-icons/vista-base-software-icons-2-by-icons-land/ico/Globe2.ico" alt="globe icon"/>
+      <span>Speech-to-Text</span>
+    </header>
+    <Sidebar isOpen={isOpen ? 'sidebar-open' : 'sidebar-collapsed'}/>
+    <main className={`main-content ${isOpen ? 'open' : 'collapsed'}`}>
+    <h1>test</h1></main>
     </>
   )
 }
