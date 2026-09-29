@@ -40,10 +40,10 @@ header > img{
   text-decoration: none;
   padding: 1%;
 }
-.sidebar-open{
+.sidebar.open{
   width:10%;
 }
-.sidebar-collapsed{
+.sidebar.collapsed{
   width:5%;
 }
 .toggle-btn{
