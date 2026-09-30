@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
-
+import Content from './Content';
 function App() {
   const [isOpen, setIsOpen] = useState(true);
   const toggleSidebar=()=>{
@@ -19,7 +19,8 @@ function App() {
           toggleSidebar={toggleSidebar}
         />
         <main className={`main-content ${isOpen ? 'open' : 'collapsed'}`}>
-        <h1>test</h1></main>
+        <Content/>
+        </main>
       </div>
     </div>
     </>

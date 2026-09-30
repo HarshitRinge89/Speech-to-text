@@ -35,37 +35,26 @@ function Sidebar({ isOpen, toggleSidebar }) {
             )}
           </a>
         </li>
-
+        {/* <h3>Quick Actions</h3> */}
         <li className="menu-item">
-          <a href="#create-new">
+          <a href="#new-recording">
             {isOpen ? (
-              <span className="text">Create New</span>
+              <span className="text">New Recording</span>
             ) : (
-              '+'
+              'N'
             )}
           </a>
         </li>
 
         <li className="menu-item">
-          <a href="#profile">
+          <a href="#upload-audio">
             {isOpen ? (
-              <span className="text">Profile</span>
+              <span className="text">Upload Audio</span>
             ) : (
-              '👤'
+              'U'
             )}
           </a>
         </li>
-
-        <li className="menu-item">
-          <a href="#settings">
-            {isOpen ? (
-              <span className="text">Settings</span>
-            ) : (
-              '⚙️'
-            )}
-          </a>
-        </li>
-
       </ul>
     </div>
   );

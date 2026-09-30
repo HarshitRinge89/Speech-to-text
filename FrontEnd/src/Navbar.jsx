@@ -10,7 +10,14 @@ function Navbar({toggleSidebar,isOpen}){
                 <span className='title'>Speech-to-text</span>
             </div>
             <div className='navbar-right'>
-                <span>User profile</span>
+                <div className='dropdown'>
+                    <button class="dropbtn" aria-haspopup="true" aria-expanded="false">User</button>
+                    <div id="dropbutton"class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Log Out</a>
+                    </div>
+                </div>
             </div>
         </nav>
     );
