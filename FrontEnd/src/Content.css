@@ -1,0 +1,23 @@
+.main-container{
+    display:flex;
+    flex-direction: column;
+}
+.bottom{
+    display: flex;
+    flex-direction: row;
+}
+.colone{
+    width:30%;
+    height:90%;
+    background-color: wheat;
+}
+.coltwo{
+    width:30%;
+    height:90%;
+    background-color: aquamarine;
+}
+.colthree{
+    width:30%;
+    height:90%;
+    background-color: bisque;
+}
