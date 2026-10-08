@@ -4,9 +4,9 @@ function Navbar({toggleSidebar,isOpen}){
     return(
         <nav className={`navbar ${isOpen ? 'sidebar-open':'sidebar-closed'}`}>
             <div className='navbar-left'>
-                <button className='nav-toggle-btn' onClick={toggleSidebar}>
+                {/* <button className='nav-toggle-btn' onClick={toggleSidebar}>
                     ☰
-                </button>
+                </button> */}
                 <span className='title'>Speech-to-text</span>
             </div>
             <div className='navbar-right'>
