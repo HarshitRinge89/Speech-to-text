@@ -1,25 +1,32 @@
-import React from 'react';
-import './index.css'
-function Navbar({toggleSidebar,isOpen}){
-    return(
-        <nav className={`navbar ${isOpen ? 'sidebar-open':'sidebar-closed'}`}>
-            <div className='navbar-left'>
-                {/* <button className='nav-toggle-btn' onClick={toggleSidebar}>
-                    ☰
-                </button> */}
-                <span className='title'>Speech-to-text</span>
-            </div>
-            <div className='navbar-right'>
-                <div className='dropdown'>
-                    <button class="dropbtn" aria-haspopup="true" aria-expanded="false">User</button>
-                    <div id="dropbutton"class="dropdown-content">
-                        <a href="#">Profile</a>
-                        <a href="#">Settings</a>
-                        <a href="#">Log Out</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    );
+/* Presentational component only: wire up search, notifications, profile menu and menu toggle yourself. */
+export default function Navbar() {
+  return (
+    <header className="navbar">
+      <button className="icon-button navbar__menu" type="button" aria-label="Toggle sidebar">
+        ☰
+      </button>
+
+      <a className="navbar__brand" href="#home" aria-label="Speech to Text Notes home">
+        <span className="navbar__brand-icon" aria-hidden="true">🎙</span>
+        <span className="navbar__brand-name">Speech to Text <span>Notes</span></span>
+      </a>
+
+      <label className="navbar__search">
+        <span className="navbar__search-icon" aria-hidden="true">⌕</span>
+        <input type="search" placeholder="Search your notes..." aria-label="Search your notes" />
+      </label>
+
+      <div className="navbar__actions">
+        <button className="icon-button" type="button" aria-label="Notifications">♧</button>
+        <button className="navbar__profile" type="button" aria-label="Open profile menu">
+          <span className="avatar">A</span>
+          <span className="navbar__profile-meta">
+            <span className="navbar__profile-name">Akriti</span>
+            <span className="navbar__profile-role">Free plan</span>
+          </span>
+          <span className="navbar__profile-chevron" aria-hidden="true">⌄</span>
+        </button>
+      </div>
+    </header>
+  );
 }
-export default Navbar;
