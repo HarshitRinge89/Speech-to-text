@@ -22,17 +22,6 @@
 .panel-heading--compact { margin-bottom: 12px; }
 .panel-heading--compact h2 { font-size: 12px; }
 
-.action-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; margin-bottom: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; }
-.action-tab { display: flex; justify-content: center; align-items: center; gap: 7px; padding: 10px 6px; color: var(--text-muted); background: transparent; border: 0; border-radius: 7px; font-size: 12px; }
-.action-tab--active { color: white; background: var(--primary); }
-
-.recording-area { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 175px; padding: 17px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 11px; }
-.recording-area__mic { display: grid; place-items: center; width: 66px; height: 66px; margin-bottom: 12px; color: white; background: var(--primary); border-radius: 50%; box-shadow: 0 0 0 9px hsl(232, 94%, 66%, .12); font-size: 27px; }
-.recording-area__prompt { margin: 0 0 8px; color: var(--text-muted); font-size: 12px; }
-.recording-area__timer { margin: 0; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.recording-area__status { margin: 6px 0 0; color: var(--danger); font-size: 10px; }
-.recording-area__status span { display: inline-block; width: 6px; height: 6px; margin-right: 4px; background: var(--danger); border-radius: 50%; }
-
 .button-row { display: flex; gap: 8px; margin-top: 12px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 38px; padding: 9px 12px; border: 1px solid transparent; border-radius: 9px; font-size: 11px; font-weight: 650; transition: background .15s ease, border-color .15s ease; }
 .button--primary { color: white; background: var(--primary); }
