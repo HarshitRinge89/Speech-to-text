@@ -5,7 +5,7 @@
 .welcome-banner__copy { max-width: 590px; position: relative; z-index: 1; }
 .eyebrow { margin: 0 0 8px; color: var(--primary-hover); font-size: 10px; font-weight: 800; letter-spacing: .13em; }
 .welcome-banner h1 { margin: 0 0 10px; font-size: clamp(21px, 2vw, 28px); letter-spacing: -.04em; }
-.welcome-banner__copy > p:last-child { max-width: 510px; margin: 0; color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+.welcome-banner__copy > p:last-child { max-width: 600px; margin: 0; color: var(--text-muted); font-size: 13px; line-height: 1.7; }
 .welcome-banner__art { position: relative; z-index: 1; display: flex; align-items: center; gap: 12px; padding: 15px 22px; }
 .sound-wave { color: hsl(232, 80%, 75%); font-size: 25px; letter-spacing: -5px; }
 .welcome-banner__mic { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 50%; color: white; background: var(--primary); font-size: 27px; box-shadow: 0 0 0 9px hsl(232, 94%, 66%, .12); }
@@ -38,9 +38,70 @@
 .field-input { display: block; width: 100%; min-height: 38px; padding: 9px 11px; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 8px; outline: none; font-size: 12px; }
 .field-input:focus { border-color: var(--primary); }
 
-.transcript-panel { display: flex; flex-direction: column; min-height: 0; height:350px;box-sizing: border-box; }
+/* .transcript-panel { display: flex; flex-direction: column; min-height: 0; height:350px;box-sizing: border-box; }
 .transcript-heading { align-items: flex-start; }
-.transcript-heading > div { min-width: 0; }
+.transcript-heading > div { min-width: 0; } */
+
+.tr-card {
+  background: #151826;
+  border: 1px solid #2a2e42;
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  max-width: 560px;
+  font-family: system-ui, sans-serif;
+}
+
+.tr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.tr-header h3 { margin: 0; font-size: 18px; }
+.tr-header p { margin: 4px 0 0; font-size: 13px; color: #9aa0b5; }
+
+/* toggle */
+.tr-toggle { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #c5c9d8; cursor: pointer; }
+.tr-toggle input { display: none; }
+.tr-switch { width: 38px; height: 22px; background: #3a3f55; border-radius: 999px; position: relative; transition: background .2s; }
+.tr-switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .2s; }
+.tr-toggle input:checked + .tr-switch { background: #5b6cff; }
+.tr-toggle input:checked + .tr-switch::after { transform: translateX(16px); }
+
+/* editor */
+.tr-editor-wrap { background: #030307; border: 1px solid #2a2e42; border-radius: 14px; overflow: hidden; }
+
+.tr-toolbar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid #2a2e42; }
+.tr-btn { background: none; border: none; color: #c5c9d8; width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 16px; }
+.tr-btn:hover { background: #1b1f33; }
+.tr-btn.is-active { background: #2c3260; color: #fff; }
+.tr-divider { width: 1px; height: 22px; background: #2a2e42; margin: 0 6px; }
+
+.tr-editor {
+  min-height: 220px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 16px;
+  outline: none;
+  line-height: 1.8;
+  font-size: 15px;
+  color: #e8eaf2;
+  position: relative;
+}
+.tr-editor.is-empty::before {
+  content: "Your transcribed text will appear here...\A\A You can edit it, add formatting, and make changes before generating your document.";
+  white-space: pre-wrap;
+  color: #6c7188;
+  position: absolute;
+  pointer-events: none;
+}
+.tr-editor ul, .tr-editor ol { margin: 4px 0; padding-left: 24px; }
+
+/* footer */
+.tr-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 13px; color: #8a90a6; }
+.tr-clear { background: #1b1f33; border: 1px solid #2a2e42; color: #fff; padding: 10px 16px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.tr-clear:disabled { opacity: .4; cursor: not-allowed; }
 
 .toggle-label { display: flex; align-items: center; gap: 7px; margin-left: auto; color: var(--text-muted); font-size: 10px; white-space: nowrap; }
 .toggle-label input { position: absolute; opacity: 0; pointer-events: none; }

@@ -1,5 +1,7 @@
 import "./content.css";
 import RecordPanel from "./recordUpload";
+import {useRef,useState} from "react";
+import Transcript from "./Transcript";
 const notes = [
   { title: "DBMS Lecture Notes", date: "Yesterday, 3:15 PM", tag: "Study" },
 ];
@@ -8,14 +10,21 @@ const activity = [
   { title: "Generated document", detail: "AI Discussion Notes.docx", time: "Today, 12:30 PM", color: "purple" },
   { title: "Uploaded audio file", detail: "lecture_audio.mp3", time: "Yesterday, 3:12 PM", color: "blue" },
 ];
-
 export default function Content() {
+  
+const transcriptRef=useRef(null);
+const [html,setHTML]=useState("");
+const [wordCount,setWordCount]=useState(0);
+const countWords = (t) => {
+  const s = t.replace(/\u00A0/g, " ").trim();
+  return s ? s.split(/\s+/).length : 0;
+};
   return (
     <main className="content" id="home">
       <section className="welcome-banner">
         <div className="welcome-banner__copy">
-          <p className="eyebrow">YOUR PERSONAL WORKSPACE</p>
-          <h1>Welcome back, User! <span aria-hidden="true">👋</span></h1>
+          <p className="eyebrow">YOUR WORKSPACE</p>
+          <h1>Welcome back, Guest User! <span aria-hidden="true">👋</span></h1>
           <p>Record your voice or upload an audio file, convert it to text, and organize everything in one place.</p>
         </div>
         <div className="welcome-banner__art" aria-hidden="true">
@@ -27,7 +36,6 @@ export default function Content() {
 
       <div className="dashboard-grid">
         <div className="dashboard-column dashboard-column--left">
-          {/* insert recordpanel here */}
           <RecordPanel/>
           <section className="panel format-panel">
             <div className="panel-heading panel-heading--compact">
@@ -38,24 +46,12 @@ export default function Content() {
         </div>
 
         <div className="dashboard-column dashboard-column--middle">
-          <section className="panel transcript-panel">
-            <div className="panel-heading transcript-heading">
-              <span className="panel-heading__icon">▤</span>
-              <div><h2>Transcript</h2><p>Edit your transcription before exporting</p></div>
-              <label className="toggle-label">Auto format <input type="checkbox" defaultChecked /><span className="toggle-ui" /></label>
-            </div>
-            <div className="editor-toolbar" aria-label="Text formatting toolbar">
-              <button type="button" aria-label="Bold"><strong>B</strong></button>
-              <button type="button" aria-label="Italic"><em>I</em></button>
-              <button type="button" aria-label="Underline"><u>U</u></button>
-              <span />
-              <button type="button" aria-label="Bulleted list">☷</button>
-              <button type="button" aria-label="Numbered list">☷</button>
-              <button type="button" aria-label="Insert link">↗</button>
-            </div>
-            <textarea className="transcript-editor" aria-label="Transcript text" placeholder="Your transcribed text will appear here...&#10;&#10;You can edit it, add formatting, and make changes before generating your document." />
-            <div className="editor-footer"><span>Words: 0</span><button className="button button--secondary button--small" type="button">⌫ Clear Text</button></div>
-          </section>
+            <Transcript ref={transcriptRef}
+            onChange={(newHtml,text)=>{
+              setHTML(newHtml);
+              setWordCount(countWords(text));
+              }}
+            />
           <section className="panel document-options">
             <div className="panel-heading panel-heading--compact">
               <span className="panel-heading__icon">▧</span><h2>Document Options</h2>

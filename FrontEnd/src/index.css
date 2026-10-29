@@ -55,7 +55,7 @@ a { color: inherit; text-decoration: none; }
 /* App shell & sidebar */
 .app-shell { min-height: 100vh; }
 .app-layout { display: flex; min-height: calc(100vh - var(--navbar-height)); }
-.sidebar { width: var(--sidebar-width); flex: 0 0 var(--sidebar-width); display: flex; flex-direction: column; padding: 24px 14px 18px; background: var(--surface); border-right: 1px solid var(--border); }
+.sidebar { font-weight:700;width: var(--sidebar-width); flex: 0 0 var(--sidebar-width); display: flex; flex-direction: column; padding: 24px 14px 18px; background: var(--surface); border-right: 1px solid var(--border); }
 .sidebar__section-label { margin: 4px 12px 12px; color: var(--text-subtle); font-size: 10px; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
 .sidebar__nav { display: grid; gap: 6px; }
 .sidebar__link { display: flex; align-items: center; gap: 12px; min-height: 43px; padding: 10px 12px; color: var(--text-muted);background-color: var(--surface); border: 1px solid transparent; border-radius: 10px; font-size: 13px; transition: .15s ease; }

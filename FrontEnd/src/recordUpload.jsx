@@ -231,7 +231,7 @@ const styles = {
     padding: "28px 12px",
     cursor: "pointer",
     transition: "all 0.2s ease",
-    backgroundColor:"var(--surface)",
+    backgroundColor:"var(--bg)",
   },
   fileRow: {
     display: "flex",
