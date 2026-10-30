@@ -1,5 +1,20 @@
-/* App-level layout guardrails. Theme and component styling live in index.css/content.css. */
-#root { width: 100%; min-height: 100vh; }
-.app-shell { width: 100%; min-height: 100vh; }
-.app-layout { width: 100%; min-width: 0; }
-.app-layout > * { min-width: 0; }
+/* App-level layout guardrails. Theme and component styling live in index.css/content.css. */ 
+#root {
+	width: 100%;
+	min-height: 100vh;
+	
+}
+.app-shell {
+	width: 100%;
+	min-height: 100vh;
+	
+}
+.app-layout {
+	width: 100%;
+	min-width: 0;
+	
+}
+.app-layout > * {
+	min-width: 0;
+	
+}

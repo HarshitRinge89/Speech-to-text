@@ -52,6 +52,14 @@ const countWords = (t) => {
               setWordCount(countWords(text));
               }}
             />
+          {/* <section className="panel tip-panel">
+            <span className="tip-panel__icon">✧</span>
+            <div><h3>Need a different format?</h3><p>You can choose from multiple file formats before generating your document.</p></div>
+          </section> */}
+        </div>
+
+        <div className="dashboard-column dashboard-column--right">
+
           <section className="panel document-options">
             <div className="panel-heading panel-heading--compact">
               <span className="panel-heading__icon">▧</span><h2>Document Options</h2>
@@ -66,13 +74,7 @@ const countWords = (t) => {
             </select>
             <button className="button button--primary button--full" type="button">▤ &nbsp; Generate Document</button>
           </section>
-          {/* <section className="panel tip-panel">
-            <span className="tip-panel__icon">✧</span>
-            <div><h3>Need a different format?</h3><p>You can choose from multiple file formats before generating your document.</p></div>
-          </section> */}
-        </div>
-
-        <div className="dashboard-column dashboard-column--right">
+{/*           
           <section className="panel notes-panel" id="notes">
             <div className="section-heading"><div><span className="panel-heading__icon">▤</span><h2>My Notes</h2></div><a href="#all-notes">View all</a></div>
             <div className="note-list">
@@ -96,7 +98,7 @@ const countWords = (t) => {
                 </article>
               ))}
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
     </main>
