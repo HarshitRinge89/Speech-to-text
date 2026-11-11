@@ -194,7 +194,7 @@ const styles = {
     width: 70,
     height: 70,
     borderRadius: "50%",
-    background: "var(--primary-hover)",
+    background: "var(--primary)",
     margin: "0 auto 10px",
     display: "flex",
     alignItems: "center",
@@ -218,7 +218,7 @@ const styles = {
   secondaryBtn: {
     flex: 1,
     padding: "10px 12px",
-    background: "var(--pr)",
+    background: "var(--surface)",
     color: "var(--text)",
     border: "1px solid var(--border)",
     borderRadius: 8,

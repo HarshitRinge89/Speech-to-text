@@ -1,16 +1,16 @@
 /* Global theme + navbar/sidebar styles. All colors use HSL variables. */ :root {
 	color-scheme: dark;
-	--bg: hsl(223, 100%, 1%);
-	--surface: hsl(225, 23%, 11%);
-	--surface-raised: hsl(224, 22%, 14%);
-	--surface-hover: hsl(224, 22%, 18%);
-	--border: hsl(222, 18%, 23%);
-	--text: hsl(220, 30%, 94%);
-	--text-muted: hsl(220, 13%, 68%);
-	--text-subtle: hsl(220, 12%, 53%);
-	--primary: hsl(232, 94%, 66%);
-	--primary-hover: hsl(232, 94%, 72%);
-	--primary-soft: hsl(232, 75%, 20%);
+	--bg: hsl(171, 100%, 0%);
+	--surface: hsl(171, 15%, 5%);
+	--surface-raised: hsl(171, 22%, 10%);
+	--surface-hover: hsl(171, 22%, 27%);
+	--border: hsl(171, 18%, 23%);
+	--text: hsl(171, 30%, 90%);
+	--text-muted: hsl(171, 13%, 68%);
+	--text-subtle: hsl(171, 12%, 53%);
+	--primary: hsl(171, 100%, 42%);
+	--primary-hover: hsl(171, 100%, 90%);
+	--primary-soft: hsl(171, 75%, 20%);
 	--success: hsl(162, 62%, 48%);
 	--warning: hsl(39, 92%, 62%);
 	--danger: hsl(0, 78%, 64%);
@@ -53,11 +53,12 @@ a {
 .icons {
 	fill:var(--text)
 }
-/* Navbar */ .navbar {
+/* Navbar */ 
+.navbar {
 	height: var(--navbar-height);
 	display: flex;
 	align-items: center;
-	gap: 24px;
+	justify-content: space-between;
 	padding: 0 28px;
 	background: var(--surface);
 	border-bottom: 1px solid var(--border);
@@ -80,11 +81,11 @@ a {
 	place-items: center;
 	width: 38px;
 	height: 38px;
-	color: white;
+	color: var(--text);
 	background: var(--primary);
+	padding: 4px;
 	border-radius: 12px;
 	font-size: 20px;
-	
 }
 .navbar__brand-name {
 	font-size: 16px;
@@ -248,7 +249,7 @@ a {
 .sidebar__link--active {
 	color: var(--primary-hover);
 	background: var(--primary-soft);
-	border-color: hsl(232, 70%, 34%);
+	border-color: hsl(171, 70%, 34%);
 	
 }
 .sidebar__link-icon {
