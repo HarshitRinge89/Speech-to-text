@@ -39,6 +39,28 @@ export default function RecordUploadAudio({ onAudioReady }) {
     onAudioReady?.(f);
   };
 
+  const interpret = async() =>{
+    if(!file) return;
+    const formData = new FormData();
+    formData.append("audio",file);
+
+    try{
+      const response = await fetch("http://localhost:5000/transcribe",{
+        method:"POST",
+        body:formData
+      });
+
+      const data = await response.json();
+
+      if(response.ok){
+        throw new Error(data.error);
+      }
+      console.log(data.transcription);
+    }
+    catch(error){
+      console.error("Transcription error:",error);
+    }
+  };
   const handleDrop = (e) => {
     e.preventDefault();
     setDragging(false);
@@ -60,7 +82,6 @@ export default function RecordUploadAudio({ onAudioReady }) {
     ...styles.tab,
     ...(activeTab === tab ? styles.tabActive : styles.tabInactive),
   });
-
   return (
     <div style={styles.card}>
       <h3 style={styles.title}>🎙️ Record or Upload Audio</h3>
@@ -81,7 +102,7 @@ export default function RecordUploadAudio({ onAudioReady }) {
           <div
             style={{
               ...styles.micCircle,
-              boxShadow: isRecording ? "0 0 0 10px rgba(239,68,68,0.15)" : "none",
+              boxShadow: isRecording ? "0 0 0 10px hsla(171,68%,68%,0.15)" : "none",
             }}
           >
             <span style={{ fontSize: 28 }}>🎙️</span>
@@ -90,7 +111,7 @@ export default function RecordUploadAudio({ onAudioReady }) {
             {isRecording ? "Recording..." : "Click to start recording"}
           </p>
           <div style={styles.timer}>{formatTime(seconds)}</div>
-          <div style={{ color: "#ef4444", fontSize: 11 }}>
+          <div style={{ color: "var(--danger)", fontSize: 11 }}>
             • {isRecording ? "Recording" : "Not recording"}
           </div>
 
@@ -99,7 +120,7 @@ export default function RecordUploadAudio({ onAudioReady }) {
               style={styles.primaryBtn}
               onClick={() => setIsRecording((r) => !r)}
             >
-              {isRecording ? "Stop Recording" : "Start Recording"}
+              {isRecording ? " ⏹ Stop Recording" : " ▶ Start Recording"}
             </button>
             <button style={styles.secondaryBtn} onClick={clearRecording}>
               Clear
@@ -112,7 +133,7 @@ export default function RecordUploadAudio({ onAudioReady }) {
             style={{
               ...styles.dropzone,
               borderColor: dragging ? "#3b5bfd" : "#c7d0f8",
-              background: dragging ? "#eef1ff" : "#f8f9ff",
+              background: dragging ? "var(--bg)" : "var(--bg)",
             }}
             onClick={() => inputRef.current?.click()}
             onDragOver={(e) => {

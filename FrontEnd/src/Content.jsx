@@ -74,7 +74,7 @@ const countWords = (t) => {
             <span className="tip-panel__icon">✧</span>
             <div><h3>Need a different format?</h3><p>You can choose from multiple file formats before generating your document.</p></div>
           </section> */}
-{/*           
+           
           <section className="panel notes-panel" id="notes">
             <div className="section-heading"><div><span className="panel-heading__icon">▤</span><h2>My Notes</h2></div><a href="#all-notes">View all</a></div>
             <div className="note-list">
@@ -88,7 +88,7 @@ const countWords = (t) => {
             </div>
           </section>
 
-          <section className="panel activity-panel">
+          {/* <section className="panel activity-panel">
             <div className="section-heading"><div><span className="panel-heading__icon">◷</span><h2>Recent Activity</h2></div></div>
             <div className="activity-list">
               {activity.map((item) => (
@@ -98,7 +98,7 @@ const countWords = (t) => {
                 </article>
               ))}
             </div>
-          </section> */}
+          </section>  */}
         </div>
       </div>
     </main>
